@@ -1,0 +1,18 @@
+version: 2
+
+sources:
+  - name: raw
+    database: CRYPTO_DB
+    schema: RAW
+    tables:
+      - name: crypto_prices_raw
+        description: "Raw crypto prices ingested from CoinGecko via Lambda and Kafka"
+        columns:
+          - name: coin_id
+            description: "Coin identifier e.g. bitcoin, ethereum"
+          - name: raw_data
+            description: "Full JSON payload from CoinGecko stored as VARIANT"
+          - name: ingested_at
+            description: "Timestamp when record was ingested"
+          - name: source
+            description: "Data source identifier"
