@@ -14,20 +14,20 @@ from airflow.utils.trigger_rule import TriggerRule
 # Snowflake Configuration
 # ─────────────────────────────────────────────────────────────
 SNOWFLAKE_CONFIG = {
-    "account": "SGTETXK-IK09262",
-    "user": "CRYPTO_PIPELINE_USER",
-    "password": "CryptoStream2024#Secure!",
-    "database": "CRYPTO_DB",
-    "schema": "RAW",
-    "warehouse": "CRYPTO_PIPELINE_WH",
-    "role": "CRYPTO_PIPELINE_ROLE",
+    "account": "",
+    "user": "",
+    "password": "",
+    "database": "",
+    "schema": "",
+    "warehouse": "",
+    "role": "",
 }
 
 # ─────────────────────────────────────────────────────────────
 # dbt Configuration
 # ─────────────────────────────────────────────────────────────
-DBT_PROJECT_DIR = "/home/reterro/evan/DBT/crypto_pipeline"
-DBT_PROFILES_DIR = "/home/reterro/.dbt"
+DBT_PROJECT_DIR = ".../DBT/crypto_pipeline"
+DBT_PROFILES_DIR = ".../.dbt"
 
 DBT_BASE_COMMAND = (
     f"dbt "
@@ -40,7 +40,7 @@ DBT_BASE_COMMAND = (
 # Default DAG Arguments
 # ─────────────────────────────────────────────────────────────
 default_args = {
-    "owner": "evan",
+    "owner": "owner",
     "depends_on_past": False,
     "retries": 1,
     "retry_delay": timedelta(minutes=2),
